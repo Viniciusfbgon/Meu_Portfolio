@@ -797,6 +797,10 @@ nav.menu {
         width: 30px;
         height: 30px;
     }
+
+    body.menu-open .menu-toggle {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
@@ -927,17 +931,17 @@ nav.menu {
   }
 
   .profile-pic {
-    height: 120px;
-    width: 120px;
-    margin-bottom: 20px;
+    height: 150px;
+    width: 150px;
+    margin-bottom: 15px;
   }
   
   .icon-linkedin {
-        height: 23px;
+        height: 20px;
     }
 
     .icon-github {
-        height: 29px;
+        height: 26px;
     }
 }
 

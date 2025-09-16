@@ -401,6 +401,45 @@
                 });
             }
         });
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+        const menuLinks = document.querySelectorAll('.menu a');
+
+        // Função para abrir o menu
+        function openMenu() {
+            document.body.classList.add('menu-open');
+            menu.classList.add('open');
+        }
+
+        // Função para fechar o menu
+        function closeMenu() {
+            document.body.classList.remove('menu-open');
+            menu.classList.remove('open');
+        }
+
+        // Clique no ícone do menu: abre o menu
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation(); // impede que o clique feche imediatamente
+            openMenu();
+        });
+
+        // Clique em qualquer link do menu: fecha o menu
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+            closeMenu();
+            });
+        });
+
+        // Clique fora do menu: fecha o menu
+        document.addEventListener('click', (e) => {
+            const isClickInsideMenu = menu.contains(e.target);
+            const isClickOnToggle = menuToggle.contains(e.target);
+
+            if (!isClickInsideMenu && !isClickOnToggle) {
+            closeMenu();
+            }
+        });
     </script>
 </body>
 </html>
