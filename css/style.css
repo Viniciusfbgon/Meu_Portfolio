@@ -186,6 +186,16 @@ nav a {
     cursor: pointer;
 }
 
+.icon-linkedin {
+    height: 27px;
+    width: auto;
+}
+
+.icon-github {
+    height: 35px;
+    width: auto;
+}
+
 /* Skills */
 .skills-container {
     width: 100%;
@@ -601,7 +611,6 @@ nav a {
     width: 40px;
     height: 40px;
     cursor: pointer;
-    filter: invert(1);
 }
 
 /* Estilo padrão para o menu (desktop) */
@@ -734,7 +743,6 @@ nav.menu {
         width: 40px;
         height: 35px;
         cursor: pointer;
-        filter: invert(1);
         position: relative;
         z-index: 2;
     }
@@ -742,7 +750,7 @@ nav.menu {
     nav.menu {
         display: none;
         position: absolute;
-        top: 30px; /* ou ajuste conforme necessário */
+        top: 30px; 
         left: 45%;
         transform: translateX(-50%);
         
@@ -773,6 +781,24 @@ nav.menu {
     }
 }
 
+@media (max-width: 460px) {
+    nav.menu {
+        padding: 8px 12px;
+        gap: 12px;
+        top: 35px;
+    }
+
+    nav.menu a {
+        font-size: 12px;
+        padding: 0 6px;
+    }
+
+    .menu-toggle {
+        width: 30px;
+        height: 30px;
+    }
+}
+
 @media (max-width: 768px) {
     .projeto-box {
         font-size: 15px;
@@ -800,6 +826,31 @@ nav.menu {
   .sobre-texto p {
     font-size: 14px;
     line-height: 1.6;
+  }
+}
+
+@media (max-width: 460px) {
+  .sobre-container {
+    flex-direction: row; /* Empilha os elementos se necessário */
+    align-items: flex-start;
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  .linha-lateral {
+    height: 350px; /* Menor altura para telas pequenas */
+    margin-left: -10px;
+  }
+
+  .sobre-texto h3 {
+    font-size: 16px; /* Título um pouco menor */
+    margin-left: -10px;
+  }
+
+  .sobre-texto p {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-left: -10px;
   }
 }
 
@@ -843,6 +894,44 @@ nav.menu {
         margin-bottom: 20px;
         max-width: 200px;
         border-radius: 50%;
+    }
+}
+
+@media (max-width: 460px) {
+  .intro.box {
+    padding: 15px 0;
+  }
+
+  .intro-content {
+    padding-left: 15px;
+  }
+
+  .intro-title h1 {
+    font-size: 17px;
+    margin-bottom: 8px;
+  }
+
+  .intro-title h2 {
+    font-size: 14px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+  }
+
+  .intro-button {
+    margin-bottom: 10px;
+  }
+
+  .intro-icons {
+    gap: 10px;
+  }
+
+  
+  .icon-linkedin {
+        height: 23px;
+    }
+
+    .icon-github {
+        height: 29px;
     }
 }
 
