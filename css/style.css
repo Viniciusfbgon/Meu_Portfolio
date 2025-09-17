@@ -1070,8 +1070,7 @@ h1, h2, h3, h4, h5, h6 {
     text-justify: auto;    
 }
 
-@media (max-width: 375px) {
-    nav.menu {
-        overflow-x: hidden; 
-    }
+
+.nav.menu {
+    overflow-x: hidden; 
 }
