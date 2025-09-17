@@ -791,6 +791,7 @@ nav.menu {
     gap: 12px;
     align-items: center;
     justify-content: center;
+    overflow-x: hidden;
 }
 
     nav.menu a {
@@ -1036,7 +1037,7 @@ nav.menu {
 @media (max-width: 460px) {
     .soft-skills-text {
     font-size: 14px;
-    line-height: 1.3;
+    line-height: 1.5;
   }
 }
 
@@ -1067,4 +1068,10 @@ nav.menu {
 h1, h2, h3, h4, h5, h6 {
     text-align: left;      
     text-justify: auto;    
+}
+
+@media (max-width: 375px) {
+    nav.menu {
+        overflow-x: hidden; 
+    }
 }
