@@ -783,10 +783,15 @@ nav.menu {
 
 @media (max-width: 460px) {
     nav.menu {
-        padding: 8px 12px;
-        gap: 12px;
-        top: 35px;
-    }
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 35px; 
+    padding: 8px 12px;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+}
 
     nav.menu a {
         font-size: 12px;
@@ -1028,6 +1033,14 @@ nav.menu {
   }
 }
 
+@media (max-width: 460px) {
+    .soft-skills-text {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+}
+
+
 /* Zoom overlay para imagens dos projetos */
 .zoomed-overlay {
   position: fixed;
@@ -1049,4 +1062,9 @@ nav.menu {
   border-radius: 10px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
   transition: transform 0.9s ease-in-out;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: left;      
+    text-justify: auto;    
 }
