@@ -310,7 +310,63 @@ nav a {
             background: near-gradient(120deg, #2ae271, #167285);
         }
         
+.skills-buttons {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  overflow: hidden; 
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  background-color: #2b2b2b; 
+  border-bottom: 1px solid rgba(180, 180, 180, 1);
+}
 
+.button-wrapper {
+  width: 50%;
+}
+
+.button-wrapper.left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.button-wrapper.right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.skills-tab-button {
+  width: 100%;
+  max-width: 100%;
+  padding: 16px 24px;
+  background-color: #2b2b2b;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  border-radius: 0;
+}
+
+.button-wrapper.left .skills-tab-button {
+  border-top-left-radius: 8px;
+}
+
+.button-wrapper.right .skills-tab-button {
+  border-top-right-radius: 8px;
+}
+
+.skills-tab-button.active {
+  background: linear-gradient(120deg, #2ae271, #167285);
+  color: black;
+}
+
+.skills-tab-button:not(.active):hover {
+  background-color: #333;
+}
 
 .skills-tabs {
   display: flex;
@@ -322,43 +378,6 @@ nav a {
   background-color: #2b2b2b; 
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
-}
-
-.tab-wrapper:nth-child(2) {
-  border-left: 1px solid #c9c9c9;
-}
-.tab-wrapper {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-}
-
-.tab {
-  cursor: pointer;
-  padding: 15px 0;
-  font-weight: 600;
-  font-size: 18px;
-  color: #fff;
-  border-bottom: 3px solid transparent;
-  transition: all 0.3s ease;
-}
-
-.tab.active {
-  color: #fff;
-  border-bottom: none;
-  position: relative;
-}
-
-.tab.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 140px; /* Ajuste o comprimento aqui */
-  height: 5px;
-  background-color: #14a756;
-  border-radius: 2px;
 }
 
 /* Portfólio */

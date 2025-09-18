@@ -81,12 +81,12 @@
     <!-- Skills -->
     <section class="box-sm" id="skills" aria-labelledby="titulo-skills">
         <h2 id="titulo-skills" style="display:none;">Skills</h2>
-        <div class="skills-tabs" role="tablist">
-            <div class="tab-wrapper">
-                <div class="tab active" data-tab="soft-skills" role="tab" aria-selected="true">Soft Skills</div>
+        <div class="skills-buttons">
+            <div class="button-wrapper">
+                <button class="skills-tab-button active" data-tab="soft-skills">Soft Skills</button>
             </div>
-            <div class="tab-wrapper">
-                <div class="tab" data-tab="hard-skills" role="tab" aria-selected="false">Hard Skills</div>
+            <div class="button-wrapper">
+                <button class="skills-tab-button" data-tab="hard-skills">Hard Skills</button>
             </div>
         </div>
 
@@ -110,7 +110,6 @@
     <!-- Portfólio -->
     <section class="portfolio" id="portfolio" aria-labelledby="titulo-portfolio">
         <h2 id="titulo-portfolio">Meu portfólio</h2>
-
         <!-- Projeto 1 -->
         <article class="projeto-box box">
                 <div class="projeto-img">
@@ -252,17 +251,17 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Tabs de Skills
-            const tabs = document.querySelectorAll('.tab');
+            const tabButtons = document.querySelectorAll('.skills-tab-button');
             const contents = document.querySelectorAll('.content');
 
-            tabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    tabs.forEach(t => t.classList.remove('active'));
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    tabButtons.forEach(b => b.classList.remove('active'));
                     contents.forEach(c => c.classList.remove('active'));
 
-                    tab.classList.add('active');
+                    button.classList.add('active');
 
-                    const tabId = tab.getAttribute('data-tab');
+                    const tabId = button.getAttribute('data-tab');
                     const contentEl = document.getElementById(`${tabId}-content`);
                     if (contentEl) contentEl.classList.add('active');
                 });
