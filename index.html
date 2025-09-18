@@ -12,7 +12,7 @@
 
     <!-- Cabeçalho -->
     <header role="banner">
-        <div class="header-left">
+        <div class="header-left reveal">
             <div class="rubrica-container">
                 <img src="images/rubrica.png" alt="Rubrica de Vinícius Freitas">
             </div>
@@ -31,15 +31,15 @@
 
     <!-- Conteúdo principal -->
     <main>
-        <section class="intro box" id="home">
-            <div class="intro-content">
-                <div class="intro-text">
-                    <div class="intro-title">
+        <section class="intro box reveal" id="home">
+            <div class="intro-content reveal">
+                <div class="intro-text reveal">
+                    <div class="intro-title reveal">
                         <h1>Olá, eu sou Vinícius Freitas</h1>
                         <h2>Estudante de Engenharia de Controle e Automação</h2>
                         <h2>& Trainee em DataMLOps</h2>
                     </div>
-                    <div class="intro-button">
+                    <div class="intro-button reveal">
                         <button class="btn-contato">Contate-me</button>
                     </div>
                     <div class="intro-icons social-icons">
@@ -58,9 +58,9 @@
 
 
     <!-- Sobre mim -->
-    <section class="sobre box" id="sobre" aria-labelledby="titulo-sobre">
-        <div class="sobre-container">
-            <div class="sobre-lado-esquerdo">
+    <section class="sobre box reveal" id="sobre" aria-labelledby="titulo-sobre">
+        <div class="sobre-container reveal">
+            <div class="sobre-lado-esquerdo reveal">
                 <img src="images/linha-lateral.jpg" alt="Imagem decorativa de linha lateral" class="linha-lateral">
             </div>
 
@@ -79,7 +79,7 @@
     </section>
 
     <!-- Skills -->
-    <section class="box-sm" id="skills" aria-labelledby="titulo-skills">
+    <section class="box-sm reveal" id="skills" aria-labelledby="titulo-skills">
         <h2 id="titulo-skills" style="display:none;">Skills</h2>
         <div class="skills-buttons">
             <div class="button-wrapper">
@@ -108,10 +108,10 @@
     </section>
 
     <!-- Portfólio -->
-    <section class="portfolio" id="portfolio" aria-labelledby="titulo-portfolio">
+    <section class="portfolio reveal" id="portfolio" aria-labelledby="titulo-portfolio">
         <h2 id="titulo-portfolio">Meu portfólio</h2>
         <!-- Projeto 1 -->
-        <article class="projeto-box box">
+        <article class="projeto-box box reveal">
                 <div class="projeto-img">
                     <img src="images/port2.png" alt="Contador de dedos com Python e Mediapipe">
                 </div>
@@ -130,7 +130,7 @@
             </article>
 
         <!-- Projeto 2 -->
-        <article class="projeto-box box">
+        <article class="projeto-box box reveal">
             <div class="projeto-img">
                 <img src="images/terralab.png" alt="Desafios do TerraLAB">
             </div>
@@ -161,11 +161,11 @@
 
         <!-- Projetos adicionais -->
         <div id="mais-projetos" style="display: none;">
-            <article class="projeto-box box">
-            <div class="projeto-img">
+            <article class="projeto-box box reveal">
+            <div class="projeto-img reveal">
                 <img src="images/harvard.jpg" alt="Curso Harvard CS50">
             </div>
-            <div class="projeto-info">
+            <div class="projeto-info reveal">
                 <h3>CS50: Introduction to Computer Science</h3>
                 <p>Curso de nível introdutório voltado para iniciantes que desejam aprender os fundamentos da computação. Ensina a pensar de forma algorítmica e a resolver problemas de programação com eficiência.
 
@@ -189,7 +189,7 @@
             </div>
         </article>
 
-        <article class="projeto-box box">
+        <article class="projeto-box box reveal">
                 <div class="projeto-img">
                     <img src="images/yt.png" alt="Clone do YouTube">
                 </div>
@@ -206,7 +206,7 @@
     </section>
 
     <!-- Contato -->
-    <section class="contato box" id="contato" aria-labelledby="titulo-contato">
+    <section class="contato box reveal" id="contato" aria-labelledby="titulo-contato">
         <h2 id="titulo-contato" class="contato-titulo">Contato</h2>
         <div class="contact-info">
             <div class="contact-item">
@@ -445,6 +445,35 @@
             closeMenu();
             }
         });
+
+        // Scroll Reveal Simples
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.reveal');
+
+            reveals.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+                const revealPoint = 100; // Quanto mais baixo, mais cedo aparece
+
+                if (elementTop < windowHeight - revealPoint) {
+                    el.classList.add('active');
+                } else {
+                    el.classList.remove('active'); // pode remover se quiser reaparecer
+                }
+            });
+        }
+        // Chama no load e no scroll
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Animação suave no header e main ao abrir a página
+        const header = document.querySelector('header');
+        const main = document.querySelector('main');
+
+        if (header && main) {
+            header.classList.add('animate-on-load');
+            main.classList.add('animate-on-load');
+        }
     </script>
 </body>
 </html>
