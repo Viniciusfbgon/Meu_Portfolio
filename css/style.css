@@ -974,6 +974,7 @@ nav.menu {
     .projeto-box {
         flex-direction: column;
         padding-left: 0; 
+        padding-right: 0;
     }
     .projeto-img {
         width: 100%;
